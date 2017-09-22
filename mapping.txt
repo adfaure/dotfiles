@@ -3,3 +3,4 @@ vimrc=$HOME/.vimrc
 zshrc=$HOME/.zshrc
 zshrc.local=$HOME/.zshrc.local
 sakura.conf=$HOME/.config/sakura/sakura.conf
+ssh_config=$HOME/.ssh/config
