@@ -19,6 +19,7 @@ call vundle#rc()
 " My Bundles here:
 "
 " original repos on github
+Plugin 'nanotech/jellybeans.vim'          " colorscheme
 Bundle 'vim-latex/vim-latex'
 Plugin 'fatih/vim-go'
 Bundle 'kien/ctrlp.vim'
