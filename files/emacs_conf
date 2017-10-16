@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (require 'org-install)
 (require 'org)
 
@@ -318,6 +325,9 @@ before runnind ant hen run the `cua--precommand-handler'"
       A->B
    }\n#+end_src" "<src lang=\"dot\">\n\n</src>"))
 
-(add-hook 'org-babel-after-execute-hook 'org-display-inline-images) 
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-babel-result-hide-all)
+
+(add-to-list 'load-path "/home/adfaure/org/ESS/lisp")
+(require 'ess-site)
