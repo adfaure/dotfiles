@@ -8,7 +8,6 @@ set-option -g set-clipboard on
 set-option -g base-index 1
 # Ring the terminal bell from any window, in URxvt this is disabled, but activity is recorded.
 set-option -g bell-action any
-set-option -g bell-on-alert on
 # Pretend to be 'screen', easier as many scripts already recognise the $TERM string.
 set-option -g default-terminal "xterm-256color"
 # The maximum number of lines held in history, mirror URxvt configuration.
@@ -139,12 +138,12 @@ unbind p
 bind p paste-buffer
 
 # Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-pipe "xclip -i -selection clipboard"
-
-# Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "xclip -i -selection clipboard"
+# bind-key -t vi-copy 'v' begin-selection
+# bind-key -t vi-copy 'y' copy-pipe "xclip -i -selection clipboard"
+# 
+# # Update default binding of `Enter` to also use copy-pipe
+# unbind -t vi-copy Enter
+# bind-key -t vi-copy Enter copy-pipe "xclip -i -selection clipboard"
 
 # Split like terminator
 unbind %
@@ -192,3 +191,10 @@ bind -n M-j run "(tmux display-message -p '#{pane_current_command}' |grep -iqE '
 # syncro
 unbind s
 bind C-s set -g synchronize-panes
+
+# Toggle mouse on with ^B m
+bind m set -g mouse on \;\
+  display 'Mouse: ON'
+# Toggle mouse off with ^B M
+bind M set -g mouse off \;\
+  display 'Mouse: OFF'

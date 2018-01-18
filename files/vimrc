@@ -18,7 +18,9 @@ call vundle#rc()
 
 " My Bundles here:
 "
-" original repos on github
+" original repos on GitHub
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'LanguageTool'
 Plugin 'nanotech/jellybeans.vim'          " colorscheme
 Bundle 'vim-latex/vim-latex'
 Plugin 'fatih/vim-go'
@@ -56,6 +58,7 @@ Bundle 'jpalardy/vim-slime'
 
 Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 " Monokai
 Plugin 'sickill/vim-monokai'
@@ -112,7 +115,7 @@ set backspace=2     " Influences the working of <BS>, <Del>, CTRL-W
                     " separated by commas. Each item allows a way to backspace
                     " over something.
 
-set autoindent      " Copy indent from current line when starting a new line
+set autoindent      " Copy indent frm current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).
 
@@ -145,7 +148,7 @@ nnoremap gV `[v`]   " highlight last inserted text
 
 "" better colors for menu in a dark theme
 " highlight Pmenu ctermfg=Cyan ctermbg=Blue cterm=None guifg=Cyan guibg=DarkBlue
-" highlight PmenuSel ctermfg=White ctermbg=Blue cterm=Bold guifg=White guibg=DarkBlue gui=Bold
+" highlight PmenuSel ctermfg=White ctermbg=Blue cterm=Bold guifg=red guibg=DarkBlue gui=Bold
 " highlight PmenuSbar ctermbg=Cyan guibg=Cyan
 " highlight PmenuThumb ctermfg=White guifg=White
 
@@ -191,8 +194,30 @@ cmap w!! w !sudo tee > /dev/null %
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+  endfun
+
 "set spell
 set spelllang=en,fr
+set spellfile=~/.vim/spell/en.utf-8.add
+set spell spelllang=en_us
+
+hi clear SpellBad
+if version >= 700
+  hi SpellBad   guisp=red    gui=undercurl guifg=NONE guibg=NONE ctermfg=16 ctermbg=53  term=underline cterm=underline
+  hi SpellCap   guisp=yellow gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellRare  guisp=blue   gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+  hi SpellLocal guisp=orange gui=undercurl guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE term=underline cterm=underline
+endif
 
 " Ctr-c is actually copying on the X clipboard
 vmap <C-c> "+y
@@ -302,4 +327,19 @@ let g:racer_experimental_completer = 1
 au FileType rust nmap <buffer> gd <Plug>(rust-def)
 au FileType rust nmap <buffer> gs <Plug>(rust-def-split)
 au FileType rust nmap <buffer> gx <Plug>(rust-def-vertical)
-au FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)  
+au FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+
+" # https://stackoverflow.com/questions/7000960/in-vim-why-doesnt-my-mouse-work-past-the-220th-column
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+
+" http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
+let g:languagetool_jar="/opt/LanguageTool-3.9/languagetool-commandline.jar"

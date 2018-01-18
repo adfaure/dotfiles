@@ -1,10 +1,9 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-
+(xterm-mouse-mode 1)
 (require 'org-install)
 (require 'org)
 
@@ -15,8 +14,13 @@
     (dired-directory dired-directory "%b"))))
 
   (global-font-lock-mode t)
-  (custom-set-faces
-    '(flyspell-incorrect ((t (:inverse-video t)))))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(flyspell-incorrect ((t (:inverse-video t)))))
 
 (line-number-mode 1)
 (column-number-mode 1)
@@ -173,7 +177,7 @@ shift-selection-mode is available."
   (let ((is-org-mode (and (not (minibufferp))
                           (eq major-mode 'org-mode)))
         (do-it t))
-    (setq org-cua-dwim-shift-translated this-command-keys-shift-translated)
+    (defvar org-cua-dwim-shift-translated this-command-keys-shift-translated)
     (when (and org-cua-dwim
                is-org-mode this-command-keys-shift-translated
                (not org-cua-dwim-was-move))
@@ -181,8 +185,8 @@ shift-selection-mode is available."
         (message "Turn ON shift-select-mode & delete-selection-mode"))
       (delete-selection-mode 1)
       (set (make-local-variable 'org-cua-dwim-was-move) t)
-      (set (make-local-variable 'cua--last-region-shifted) t)
-      (set (make-local-variable 'cua--explicit-region-start) nil)
+      (set (defvar 'cua--last-region-shifted) t)
+      (set (defvar 'cua--explicit-region-start) nil)
       (set (make-local-variable 'shift-select-mode) t)
       (set (make-local-variable 'cua-mode) nil))
     (when (and org-cua-dwim
@@ -265,9 +269,8 @@ before runnind ant hen run the `cua--precommand-handler'"
 (global-set-key (kbd "C-c <left>") 'outline-previous-visible-heading)
 (global-set-key (kbd "C-c <right>") 'outline-next-visible-heading)
 
-(setq org-export-babel-evaluate nil)
+; (setq org-export-babel-evaluate nil)
 (setq org-confirm-babel-evaluate nil)
-
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(
@@ -316,18 +319,102 @@ before runnind ant hen run the `cua--precommand-handler'"
 (add-to-list 'org-structure-template-alist
         '("B" "#+begin_src sh :session foo :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 
-(add-to-list 'org-structure-template-alist
-        '("g" "#+begin_src dot :results output graphics :file \"/tmp/graph.pdf\" :exports both
-   digraph G {
-      node [color=black,fillcolor=white,shape=rectangle,style=filled,fontname=\"Helvetica\"];
-      A[label=\"A\"]
-      B[label=\"B\"]
-      A->B
-   }\n#+end_src" "<src lang=\"dot\">\n\n</src>"))
+;(add-to-list 'org-structure-template-alist
+;        '("g" "#+begin_src dot :results output graphics :file \"/tmp/graph.pdf\" :exports both
+;   digraph G {
+;      node [color=black,fillcolor=white,shape=rectangle,style=filled,fontname=\"Helvetica\"];
+;      A[label=\"A\"]
+;      B[label=\"B\"]
+;      A->B
+;   }\n#+end_src" "<src lang=\"dot\">\n\n</src>"))
 
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-babel-result-hide-all)
 
 (add-to-list 'load-path "/home/adfaure/org/ESS/lisp")
+(add-to-list 'load-path "/home/adfaure/org/langtool")
+(add-to-list 'load-path "/home/adfaure/org/oxextra")
 (require 'ess-site)
+(require 'ox-extra)
+(require 'langtool)
+
+(setq langtool-language-tool-jar "/opt/LanguageTool-3.9/languagetool-commandline.jar")
+
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (langtool ## org-edna))))
+
+
+;; Tristan's config from this point
+(global-linum-mode 1)
+(show-paren-mode 1)
+(setq show-paren-mode 0)
+(column-number-mode 1)
+;; initial window
+(setq initial-frame-alist
+      '(
+        (width . 106) ; character
+        (height . 50) ; lines
+        ))
+
+;; default/sebsequent window
+(setq default-frame-alist
+      '(
+        (width . 120) ; character
+        (height . 60) ; lines
+        ))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(custom-enabled-themes (quote (tsdh-dark)))
+ '(inhibit-startup-screen t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+; set M-TAB as binding for auto-completion
+(global-set-key (kbd "M-TAB") 'dabbrev-expand)
+
+;hide toolbar
+(tool-bar-mode -1)
+
+;hide menu bar
+(menu-bar-mode -1)
+
+;hide scroll bar
+(scroll-bar-mode -1)
+
+;activate hs-minor-mode (hide/show blocks) for Python
+(add-hook 'python-mode-hook 'hs-minor-mode)
+
+;set C-TAB as binding for hs-toggle-hiding
+(global-set-key [C-tab] 'hs-toggle-hiding)
+
+;delete selection mode
+(delete-selection-mode 1)
+
+;binding for killing current buffer with <C-x k>
+(global-set-key (kbd "C-x k") 'kill-this-buffer)

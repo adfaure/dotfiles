@@ -76,3 +76,4 @@ export TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'other page faults:         %R'
 
 alias pacman="pacman --color=auto"
+prompt adam2
