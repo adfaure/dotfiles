@@ -7,7 +7,7 @@ imagprint() {
     lp -h print.imag.fr:631 -d lig-copieur-439-nb $1
 }
 
-. /home/adfaure/.nix-profile/etc/profile.d/nix.sh
+#. /home/adfaure/.nix-profile/etc/profile.d/nix.sh
 
 #export Datamove nix-repo
 

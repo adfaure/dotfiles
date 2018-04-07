@@ -4,6 +4,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 (xterm-mouse-mode 1)
+
 (require 'org-install)
 (require 'org)
 
@@ -21,6 +22,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(flyspell-incorrect ((t (:inverse-video t)))))
+
+(require 'evil)
+(evil-mode 1)
 
 (line-number-mode 1)
 (column-number-mode 1)
@@ -332,11 +336,11 @@ before runnind ant hen run the `cua--precommand-handler'"
 (add-hook 'org-mode-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-babel-result-hide-all)
 
-(add-to-list 'load-path "/home/adfaure/org/ESS/lisp")
-(add-to-list 'load-path "/home/adfaure/org/langtool")
-(add-to-list 'load-path "/home/adfaure/org/oxextra")
-(require 'ess-site)
-(require 'ox-extra)
+; (add-to-list 'load-path "/home/adfaure/org/ESS/lisp")
+; (add-to-list 'load-path "/home/adfaure/org/langtool")
+; (add-to-list 'load-path "/home/adfaure/org/oxextra")
+; (require 'ess-site)
+; (require 'ox-extra)
 (require 'langtool)
 
 (setq langtool-language-tool-jar "/opt/LanguageTool-3.9/languagetool-commandline.jar")
