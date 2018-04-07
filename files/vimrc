@@ -72,7 +72,6 @@ set encoding=utf-8
 " ...
 
 " For multi-byte character support (CJK support, for example):
-:echo "Hello, world!"
 "set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
 
 set tabstop=2       " Number of spaces that a <Tab> in the file counts for.
