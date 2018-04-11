@@ -207,8 +207,8 @@ function! SynGroup()
 "set spell
 "set spelllang=en,fr
 set spelllang=en
-set spellfile=~/.vim/spell/en.utf-8.add
-set spell spelllang=en_us
+"set spellfile=~/.vim/spell/en.utf-8.add
+"set spell spelllang=en_us
 
 hi clear SpellBad
 if version >= 700
