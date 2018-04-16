@@ -2,8 +2,11 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+; (package-initialize)
+
 (xterm-mouse-mode 1)
+
+(global-auto-revert-mode t)
 
 (require 'org-install)
 (require 'org)
@@ -15,6 +18,10 @@
     (dired-directory dired-directory "%b"))))
 
   (global-font-lock-mode t)
+
+(require 'openwith)
+(openwith-mode t)
+(setq openwith-associations '(("\\.pdf\\'" "evince" (file))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -339,8 +346,9 @@ before runnind ant hen run the `cua--precommand-handler'"
 ; (add-to-list 'load-path "/home/adfaure/org/ESS/lisp")
 ; (add-to-list 'load-path "/home/adfaure/org/langtool")
 ; (add-to-list 'load-path "/home/adfaure/org/oxextra")
-; (require 'ess-site)
+(require 'ess-site)
 ; (require 'ox-extra)
+
 (require 'langtool)
 
 (setq langtool-language-tool-jar "/opt/LanguageTool-3.9/languagetool-commandline.jar")
@@ -422,3 +430,6 @@ before runnind ant hen run the `cua--precommand-handler'"
 
 ;binding for killing current buffer with <C-x k>
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
+
+;auto completion
+(add-hook 'after-init-hook 'global-company-mode)

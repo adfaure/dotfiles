@@ -83,6 +83,9 @@ prompt adam2
 
 bindkey -v
 
+# Start ranger file navigator
+alias r='ranger'
+
 _ranger () {
  command ranger "$(pwd)" <$TTY
  print -n "\033[A"
