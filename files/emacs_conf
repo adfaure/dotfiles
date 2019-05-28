@@ -19,8 +19,6 @@
 
   (global-font-lock-mode t)
 
-(require 'openwith)
-(openwith-mode t)
 (setq openwith-associations '(("\\.pdf\\'" "evince" (file))))
 
 (custom-set-faces
@@ -280,7 +278,9 @@ before runnind ant hen run the `cua--precommand-handler'"
 (global-set-key (kbd "C-c <left>") 'outline-previous-visible-heading)
 (global-set-key (kbd "C-c <right>") 'outline-next-visible-heading)
 
-; (setq org-export-babel-evaluate nil)
+; (setq python-shell-interpreter "/home/adfaure/.nix-profile/bin/python")
+
+(setq org-export-babel-evaluate t)
 (setq org-confirm-babel-evaluate nil)
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -367,7 +367,8 @@ before runnind ant hen run the `cua--precommand-handler'"
 
 
 ;; Tristan's config from this point
-(global-linum-mode 1)
+; (global-linum-mode 1)
+
 (show-paren-mode 1)
 (setq show-paren-mode 0)
 (column-number-mode 1)
@@ -433,3 +434,34 @@ before runnind ant hen run the `cua--precommand-handler'"
 
 ;auto completion
 (add-hook 'after-init-hook 'global-company-mode)
+
+(setq org-latex-prefer-user-labels t)
+
+; bépo confiquration for evil
+;première étape: avant de réaffecter c,t,s,r en h,j,k,l, il faut retirer ces touches de l’agencement de clavier normal-state
+(define-key evil-normal-state-map "c" nil)
+(define-key evil-normal-state-map "C" nil)
+(define-key evil-normal-state-map "s" nil)
+(define-key evil-normal-state-map "S" nil)
+(define-key evil-normal-state-map "r" nil)
+(define-key evil-normal-state-map "R" nil)
+(define-key evil-normal-state-map "j" nil)
+(define-key evil-normal-state-map "J" nil)
+;je redéfinis certaines fonctions pour l’état normal
+(define-key evil-normal-state-map "h" 'evil-change)
+(define-key evil-normal-state-map "H" 'evil-change-line)
+(define-key evil-normal-state-map "T" 'evil-join)
+(define-key evil-normal-state-map "l" 'evil-replace)
+(define-key evil-normal-state-map "L" 'evil-replace-state)
+(define-key evil-normal-state-map "k" 'evil-substitute)
+(define-key evil-normal-state-map "K" 'evil-change-whole-line)
+;même chose mais cette fois pour l’état motion
+(define-key evil-motion-state-map "c" 'evil-backward-char)
+(define-key evil-motion-state-map "C" 'evil-window-top)
+(define-key evil-motion-state-map "t" 'evil-next-line)
+(define-key evil-motion-state-map "s" 'evil-previous-line)
+(define-key evil-motion-state-map "r" 'evil-forward-char)
+(define-key evil-motion-state-map "R" 'evil-window-bottom)
+(define-key evil-motion-state-map "j" 'evil-find-char-to)
+(define-key evil-motion-state-map "J" 'evil-find-char-to-backward)
+
