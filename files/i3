@@ -8,7 +8,6 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -103,7 +102,7 @@ bindsym $mod+dead_circumflex    workspace 6
 bindsym $mod+v      workspace 7
 bindsym $mod+d      workspace 8
 bindsym $mod+l      workspace 9
-bindsym $mod+j      workspace 0
+bindsym $mod+j      workspace 10
 
 # finds out, if available)
 bindsym $mod+parenright workspace 5
@@ -125,7 +124,7 @@ bindsym $mod+Shift+dead_circumflex move container to workspace 6
 bindsym $mod+Shift+v move container to workspace 7
 bindsym $mod+Shift+d move container to workspace 8
 bindsym $mod+Shift+l move container to workspace 9
-bindsym $mod+Shift+j move container to workspace 0
+bindsym $mod+Shift+j move container to workspace 10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -156,7 +155,10 @@ bindsym $mod+m mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+  font pango:monospace 11
+  status_command 2>/tmp/i3blocks.err i3blocks -vvv -c /etc/i3blocks.conf | tee /tmp/i3blocks.out
+  # status_command i3blocks
+  # status_command i3status
 }
 
 
