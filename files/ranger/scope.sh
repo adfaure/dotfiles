@@ -1,4 +1,4 @@
-#!/nix/store/zqh3l3lyw32q1ayb15bnvg9f24j5v2p0-bash-4.4-p12/bin/bash
+#!/usr/bin/env bash
 
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'

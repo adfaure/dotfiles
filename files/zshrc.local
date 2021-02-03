@@ -7,8 +7,11 @@ export PATH=$PATH:/home/adfaure/.gem/ruby/2.4.0/bin
 export PATH=$PATH:$HOME/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PAGER=bat
 
+export PAGER=bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# This enables to use bat as pager without infinite recursion
+export BAT_PAGER="less -RF"
 ## Git alias
 
 export TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\

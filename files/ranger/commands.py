@@ -28,7 +28,7 @@ class my_edit(Command):
 
     # The execute method is called when you run this command in ranger.
     def execute(self):
-        # self.arg(1) is the first (space-separated) argument to the function.
+        # self.arg(1) is the first (space-separated) argument to the function.r
         # This way you can write ":my_edit somefilename<ENTER>".
         if self.arg(1):
             # self.rest(1) contains self.arg(1) and everything that follows

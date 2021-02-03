@@ -1,10 +1,1 @@
-tmux=$HOME/.tmux.conf
 vimrc=$HOME/.vimrc
-zshrc=$HOME/.zshrc
-zshrc.local=$HOME/.zshrc.local
-sakura.conf=$HOME/.config/sakura/sakura.conf
-ssh_config=$HOME/.ssh/config
-emacs_conf=$HOME/.emacs
-i3=$HOME/.config/i3/config
-ranger_rifle=$HOME/.config/ranger/ifle.conf
-ranger_rc=$HOME/.config/ranger/rc.conf
