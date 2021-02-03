@@ -313,3 +313,5 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " use clipboard as default register
 " https://vim.fandom.com/wiki/Accessing_the_system_clipboard
 set clipboard=unnamed
+
+colorscheme scheakur
