@@ -176,3 +176,9 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Config for i3-vim-focus
+bindsym --release $mod+h exec "i3-vim-focus left"
+bindsym --release $mod+j exec "i3-vim-focus down"
+bindsym --release $mod+k exec "i3-vim-focus up"
+bindsym --release $mod+l exec "i3-vim-focus right"
