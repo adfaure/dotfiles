@@ -326,3 +326,10 @@ let g:NERDTreeMapJumpLastChild = 'J'
 let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
+
+" Easy pane navigation with Alt+arrows
+nmap <silent> <A-Up> :wincmd s<CR>
+nmap <silent> <A-Down> :wincmd t<CR>
+nmap <silent> <A-Left> :wincmd c<CR>
+nmap <silent> <A-Right> :wincmd r<CR>
+
