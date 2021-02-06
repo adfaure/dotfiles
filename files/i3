@@ -42,11 +42,17 @@ bindsym $mod+i exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
 # change focus
 bindsym $mod+c focus left
 bindsym $mod+t focus down
 bindsym $mod+s focus up
 bindsym $mod+r focus right
+
+# bindsym --release $mod+c exec --no-startup-id "i3-vim-nav h"
+# bindsym --release $mod+t exec --no-startup-id "i3-vim-nav j"
+# bindsym --release $mod+s exec --no-startup-id "i3-vim-nav k"
+# bindsym --release $mod+r exec --no-startup-id "i3-vim-nav l"
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left  focus left
@@ -176,9 +182,3 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-# Config for i3-vim-focus
-bindsym --release $mod+h exec "i3-vim-focus left"
-bindsym --release $mod+j exec "i3-vim-focus down"
-bindsym --release $mod+k exec "i3-vim-focus up"
-bindsym --release $mod+l exec "i3-vim-focus right"

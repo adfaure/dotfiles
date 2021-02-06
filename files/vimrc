@@ -327,14 +327,7 @@ let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
 
-" Easy pane navigation with Alt+arrows
-nmap <silent> <A-Up> :wincmd s<CR>
-nmap <silent> <A-Down> :wincmd t<CR>
-nmap <silent> <A-Left> :wincmd c<CR>
-nmap <silent> <A-Right> :wincmd r<CR>
-
-" Config for i3-vim-focus
-nnoremap <silent> <c-r> :call Focus('right', 'r')<CR>
-nnoremap <silent> <c-c> :call Focus('left', 'c')<CR>
-nnoremap <silent> <c-s> :call Focus('up', 's')<CR>
-nnoremap <silent> <c-t> :call Focus('down', 't')<CR>
+nnoremap <C-T> <C-W><C-J>
+nnoremap <C-S> <C-W><C-K>
+nnoremap <C-R> <C-W><C-L>
+nnoremap <C-C> <C-W><C-H>
