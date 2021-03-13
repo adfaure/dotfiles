@@ -327,6 +327,9 @@ let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
 
+let mapleader = ","
+nmap <leader>ne :NERDTree<cr>
+
 nnoremap <C-T> <C-W><C-J>
 nnoremap <C-S> <C-W><C-K>
 nnoremap <C-R> <C-W><C-L>
