@@ -2,6 +2,21 @@ Host g5k
   User afaure
   Hostname access-north.grid5000.fr
 
+Host grenoble.g5k
+  User afaure
+  ProxyCommand ssh g5k -W "$(basename %h .g5k):%p"
+  ForwardAgent yes
+
+Host rennes.g5k
+  User afaure
+  ProxyCommand ssh g5k -W "$(basename %h .g5k):%p"
+  ForwardAgent yes
+
+Host nancy.g5k
+  User afaure
+  ProxyCommand ssh g5k -W "$(basename %h .g5k):%p"
+  ForwardAgent yes
+
 Host *.g5k
   User afaure
   ProxyCommand ssh g5k -W "$(basename %h .g5k):%p"
