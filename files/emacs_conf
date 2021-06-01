@@ -465,3 +465,4 @@ before runnind ant hen run the `cua--precommand-handler'"
 (define-key evil-motion-state-map "j" 'evil-find-char-to)
 (define-key evil-motion-state-map "J" 'evil-find-char-to-backward)
 
+(setq-default show-trailing-whitespace t)
