@@ -46,5 +46,5 @@ ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$WHITE%}]"
 # Prompt format
 PROMPT='
 %{$GREEN_BOLD%}%n@%m%{$WHITE%}:%{$YELLOW%}%~%u$(git_prompt_info)%{$RESET_COLOR%}
-%{$BLUE%}>%{$RESET_COLOR%} '
+%{$BLUE_BOLD%}>%{$RESET_COLOR%} '
 RPROMPT='$(current_branch)$(git_prompt_short_sha)$(git_prompt_status)%{$RESET_COLOR%}'
