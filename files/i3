@@ -65,10 +65,10 @@ bindsym $mod+Ctrl+Next move workspace to output right
 bindsym $mod+Ctrl+Prior move workspace to output left
 
 # move focused window
-bindsym $mod+Shift+t move left
-bindsym $mod+Shift+s move down
-bindsym $mod+Shift+r move up
-bindsym $mod+Shift+n move right
+bindsym $mod+Shift+c move left
+bindsym $mod+Shift+t move down
+bindsym $mod+Shift+s move up
+bindsym $mod+Shift+r move right
 
 bindsym $mod+Shift+Left  move left
 bindsym $mod+Shift+Down  move down
