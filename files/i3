@@ -83,9 +83,9 @@ bindsym $mod+Shift+h split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, default)
-bindsym $mod+g       layout splitv
-bindsym $mod+q       layout splith
-bindsym $mod+Shift+C layout tabbed
+bindsym $mod+Shift+g       layout splitv
+bindsym $mod+g layout splith
+bindsym $mod+q       layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -140,10 +140,11 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym s           resize shrink width 10 px or 10 ppt
-        bindsym t           resize grow height 10 px or 10 ppt
-        bindsym r           resize shrink height 10 px or 10 ppt
-        bindsym n			      resize grow width 10 px or 10 ppt
+        bindsym c        resize shrink width 10 px or 10 ppt
+        bindsym t        resize grow height 10 px or 10 ppt
+        bindsym s          resize shrink height 10 px or 10 ppt
+        bindsym r       resize grow width 10 px or 10 ppt
+
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
