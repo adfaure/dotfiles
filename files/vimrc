@@ -334,3 +334,6 @@ nnoremap <C-T> <C-W><C-J>
 nnoremap <C-S> <C-W><C-K>
 nnoremap <C-R> <C-W><C-L>
 nnoremap <C-C> <C-W><C-H>
+
+# Relative line number
+set rnu!
