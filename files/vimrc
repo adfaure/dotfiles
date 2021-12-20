@@ -169,7 +169,7 @@ set wildmode=list:longest,full
 
 set laststatus=2    " Activate Status bar even without split
 
-set foldlevel=99    " Don't fold by default
+" set foldlevel=99    " Don't fold by default
 
 
 filetype plugin indent on     " required!
@@ -314,7 +314,7 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " https://vim.fandom.com/wiki/Accessing_the_system_clipboard
 set clipboard=unnamed
 
-colorscheme scheakur
+colorscheme monokai
 
 " NERDTree
 " ————————
