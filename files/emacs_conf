@@ -391,9 +391,12 @@ before runnind ant hen run the `cua--precommand-handler'"
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(custom-enabled-themes '(monokai))
- '(custom-safe-themes
-   '("dd49af22596f41067fa1fb90ceba5aba49850ac1f23feafff5ce0d279c8dd3d2" default)))
+)
+
+(load-theme 'monokai t)
+
+ ;;'(custom-safe-themes
+ ;;  '("dd49af22596f41067fa1fb90ceba5aba49850ac1f23feafff5ce0d279c8dd3d2" default)))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
