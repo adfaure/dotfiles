@@ -34,10 +34,10 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+k kill
+bindsym $mod+Shift+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+i exec dmenu_run
+bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -51,8 +51,8 @@ bindsym $mod+l focus right
 
 # bindsym --release $mod+c exec --no-startup-id "i3-vim-nav h"
 # bindsym --release $mod+t exec --no-startup-id "i3-vim-nav j"
-# bindsym --release $mod+s exec --no-startup-id "i3-vim-nav k"
-# bindsym --release $mod+r exec --no-startup-id "i3-vim-nav l"
+# bindsym --release $mod+s exec --no-startup-id "i3-vim-nav k"
+# bindsym --release $mod+r exec --no-startup-id "i3-vim-nav l"
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left  focus left
@@ -81,8 +81,8 @@ bindsym $mod+Tab exec rofi -show window
 bindsym $mod+F3 exec rofi -show ssh
 
 # split in horizontal/vertical orientation
-bindsym $mod+h split h
-bindsym $mod+Shift+h split v
+bindsym $mod+v split h
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -103,18 +103,18 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+apostrophe focus child
 
 # # switch to workspace azerty Style
-bindsym $mod+a      workspace 1
+bindsym $mod+a workspace 1
 bindsym $mod+z workspace 2
-bindsym $mod+e      workspace 3
-bindsym $mod+r      workspace 4
+bindsym $mod+e workspace 3
+bindsym $mod+r workspace 4
 bindsym $mod+t workspace 5
 
 # # Start i3bar to display a workspace bar (plus the system information i3status
-bindsym $mod+y    workspace 6
-bindsym $mod+u      workspace 7
-bindsym $mod+i      workspace 8
-bindsym $mod+o      workspace 9
-bindsym $mod+p      workspace 10
+bindsym $mod+y workspace 6
+bindsym $mod+u workspace 7
+bindsym $mod+i workspace 8
+bindsym $mod+o workspace 9
+bindsym $mod+p workspace 10
 
 # finds out, if available)
 bindsym $mod+parenright workspace 5
