@@ -126,17 +126,17 @@ bindsym $mod+slash workspace 4
 bindsym $mod+asterisk workspace 5
 
 # move focused container to workspace azerty Style
-bindsym $mod+Shift+a      move container to workspace 1
+bindsym $mod+Shift+a move container to workspace 1
 bindsym $mod+Shift+z move container to workspace 2
-bindsym $mod+Shift+e      move container to workspace 3
-bindsym $mod+Shift+r      move container to workspace 4
+bindsym $mod+Shift+e move container to workspace 3
+bindsym $mod+Shift+r move container to workspace 4
 bindsym $mod+Shift+t move container to workspace 5
 
-bindsym $mod+Shift+dead_circumflex move container to workspace 6
-bindsym $mod+Shift+y move container to workspace 7
-bindsym $mod+Shift+u move container to workspace 8
-bindsym $mod+Shift+i move container to workspace 9
-bindsym $mod+Shift+o move container to workspace 10
+bindsym $mod+Shift+y move container to workspace 6
+bindsym $mod+Shift+u move container to workspace 7
+bindsym $mod+Shift+i move container to workspace 8
+bindsym $mod+Shift+o move container to workspace 9
+bindsym $mod+Shift+p move container to workspace 10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
