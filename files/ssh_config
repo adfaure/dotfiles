@@ -41,11 +41,6 @@ Host *.g5k_south
   ProxyCommand ssh g5k -W "$(basename %h .g5k):%p"
   ForwardAgent yes
 
-Host ciment
-  User adfaure
-  Hostname access-rr-ciment.imag.fr
-
 Host *.ciment
-  User adfaure
-  ProxyCommand ssh ciment -W "$(basename %h .ciment):%p"
-  ForwardAgent yes
+  User login-perseus
+  ProxyCommand ssh -q fauread@access-gricad.univ-grenoble-alpes.fr "nc -w 60 `basename %h .ciment` %p"
