@@ -105,14 +105,14 @@ bindsym $mod+apostrophe focus child
 
 
 set $w1 "1:code"
-set $w2 "2:code"
-set $w3 "3:code"
-set $w4 "4:internet"
+set $w2 "2:code'"
+set $w3 "3:code''"
+set $w4 "4:internet'"
 set $w5 "5:internet"
-set $w6 "6:misc"
-set $w7 "7:misc"
+set $w6 "6:journal"
+set $w7 "7:misc'"
 set $w8 "8:music"
-set $w9 "9:misc"
+set $w9 "9:misc''"
 set $w10 "10:irc"
 
 

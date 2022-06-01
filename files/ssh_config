@@ -44,3 +44,4 @@ Host *.g5k_south
 Host *.ciment
   User fauread
   ProxyCommand ssh -q fauread@access-gricad.univ-grenoble-alpes.fr "nc -w 60 `basename %h .ciment` %p"
+  ForwardAgent yes
