@@ -28,19 +28,22 @@ bindkey -v
 # Start ranger file navigator
 bindkey '^r' history-incremental-search-backward
 
- # On remappe pour le bépo
-bindkey -a c vi-backward-char
-bindkey -a r vi-forward-char
-bindkey -a t vi-down-line-or-history
-bindkey -a s vi-up-line-or-history
-bindkey -a $ vi-end-of-line
-bindkey -a 0 vi-digit-or-beginning-of-line
-bindkey -a h vi-change
-bindkey -a H vi-change-eol
-bindkey -a dd vi-change-whole-line
-bindkey -a l vi-replace-chars
-bindkey -a L vi-replace
-bindkey -a k vi-substitute
+# ctrl+space for autosuggest-accept
+bindkey '^ ' autosuggest-accept
+
+# On remappe pour le bépo
+# bindkey -a c vi-backward-char
+# bindkey -a r vi-forward-char
+# bindkey -a t vi-down-line-or-history
+# bindkey -a s vi-up-line-or-history
+# bindkey -a $ vi-end-of-line
+# bindkey -a 0 vi-digit-or-beginning-of-line
+# bindkey -a h vi-change
+# bindkey -a H vi-change-eol
+# bindkey -a dd vi-change-whole-line
+# bindkey -a l vi-replace-chars
+# bindkey -a L vi-replace
+# bindkey -a k vi-substitute
 
 # nix shell hook
 any-nix-shell zsh --info-right | source /dev/stdin
