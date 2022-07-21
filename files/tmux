@@ -12,6 +12,7 @@ set -g base-index 1
 
 # Upda the numbering of the windows
 set -g renumber-windows on
+set -g mouse on
 
 # Prefix-r to reload the config
 bind-key r source-file ~/.tmux.conf
