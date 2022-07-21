@@ -328,11 +328,11 @@ colorscheme monokai
 let g:NERDTreeMapChdir = 'H'
 let g:NERDTreeMapChdir = 'hd'
 let g:NERDTreeMapCWD = 'HD'
-let g:NERDTreeMapOpenInTab = 'j'
-let g:NERDTreeMapJumpLastChild = 'J'
-let g:NERDTreeMapOpenVSplit = 'k'
-let g:NERDTreeMapRefresh = 'l'
-let g:NERDTreeMapRefreshRoot = 'L'
+let g:NERDTreeMapOpenInTab = 't'
+let g:NERDTreeMapJumpLastChild = 'T'
+let g:NERDTreeMapOpenVSplit = 'v'
+let g:NERDTreeMapRefresh = 'r'
+let g:NERDTreeMapRefreshRoot = 'R'
 
 let mapleader = ","
 nmap <leader>ne :NERDTree<cr>
