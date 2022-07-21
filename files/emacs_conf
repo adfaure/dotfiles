@@ -28,8 +28,14 @@
  ;; If there is more than one, they won't work right.
  '(flyspell-incorrect ((t (:inverse-video t)))))
 
+(setq evil-want-C-i-jump nil)
+
 (require 'evil)
 (evil-mode 1)
+
+;; Get tab working on terminal mode
+(when evil-want-C-i-jump
+  (define-key evil-motion-state-map (kbd "C-i") 'evil-jump-forward))
 
 ;; Fix evil mode to work with org-mode in normal state (i.e. command mode)
 ;; https://emacs.stackexchange.com/questions/28222/how-to-make-tab-work-in-org-mode-when-combined-with-evil-mode
