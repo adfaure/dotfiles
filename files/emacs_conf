@@ -110,6 +110,15 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; wraps the lines in org-mode
+;; (setq org-startup-truncated nil)
+;; taken from https://www.reddit.com/r/emacs/comments/43vfl1/comment/czl98d4/
+(add-hook 'org-mode-hook #'(lambda ()
+                             ;; make the lines in the buffer wrap around the edges of the screen.
+                             ;; to press C-c q  or fill-paragraph ever again!
+                             (visual-line-mode)
+                             (org-indent-mode)))
+
 (setq org-directory "~/org/")
 
 (setq org-hide-leading-stars t)
@@ -118,6 +127,7 @@
 (setq org-src-tab-acts-natively t) ;; you want this to have completion in blocks
 (setq org-hide-emphasis-markers t) ;; to hide the *,=, or / markers
 (setq org-pretty-entities t)       ;; to have \alpha, \to and others display as utf8 http://orgmode.org/manual/Special-symbols.html
+
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
