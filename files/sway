@@ -33,13 +33,13 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec bemenu-run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -50,17 +50,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# bindsym --release $mod+c exec --no-startup-id "i3-vim-nav h"
-# bindsym --release $mod+t exec --no-startup-id "i3-vim-nav j"
-# bindsym --release $mod+s exec --no-startup-id "i3-vim-nav k"
-# bindsym --release $mod+r exec --no-startup-id "i3-vim-nav l"
-
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Left  focus left
-# bindsym $mod+Down  focus down
-# bindsym $mod+Up    focus up
-# bindsym $mod+Right focus right
 
 # move focused workspace between monitors
 bindsym $mod+Ctrl+Next move workspace to output right
@@ -200,6 +189,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym Shift+Print	exec grimshot --notify save area
+
 # https://nixos.wiki/wiki/Sway
 exec dbus-sway-environment
 exec configure-gtk
+exec mako
