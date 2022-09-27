@@ -181,7 +181,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease s 3.2 Impact creen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -195,3 +195,11 @@ bindsym Shift+Print	exec grimshot --notify save area
 exec dbus-sway-environment
 exec configure-gtk
 exec mako
+
+input "type:touchpad" {
+    tap enabled
+    dwt enabled
+    # accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+   # pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
+}
+
