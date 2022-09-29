@@ -1,5 +1,7 @@
  # Define the prefix
-set -g prefix C-a
+set -g prefix C-z
+
+# Restore emacs behavior
 set -s escape-time 0
 
 # Split pane horizontally
@@ -38,12 +40,6 @@ bind j select-pane -D
 unbind k
 bind k select-pane -U
 unbind l
-bind l select-pane -R
-
-## Copy mode
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-selection
-bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
 
 # fix ranger preview
 set-option -g default-terminal "screen-256color"
