@@ -352,7 +352,7 @@ before runnind ant hen run the `cua--precommand-handler'"
 ; (add-to-list 'load-path "/home/adfaure/org/ESS/lisp")
 ; (add-to-list 'load-path "/home/adfaure/org/langtool")
 ; (add-to-list 'load-path "/home/adfaure/org/oxextra")
-(require 'ess-site)
+; (require 'ess-site)
 ; (require 'ox-extra)
 
 (require 'langtool)
