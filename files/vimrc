@@ -162,6 +162,21 @@ nmap <leader>ne :NERDTree<cr>
 " Nerdtree navigate with ctrl
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Relative line number
 set rnu!
+
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠"
+let g:ale_linters = { 'rust': ['analyzer'], 'python': ['pyls'], 'c': ['ccls'], 'javascript': ['flow'] }
+let g:ale_rust_cargo_use_clippy = 1
+let g:airline#extensions#ale#enabled = 1
+
+nmap K :ALEHover<CR>
+nmap gd :ALEGoToDefinition<CR>
+
