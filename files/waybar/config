@@ -1,0 +1,153 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "bottom",
+
+	"modules-left": [
+		"sway/workspaces",
+		"custom/right-arrow-dark"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+    "custom/spotify",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"network",
+    "custom/vpn",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+    "on-middle-click": "",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+  "network": {
+    "interval": 10,
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "custom/spotify": {
+      "format": "{icon} {}",
+      "escape": true,
+      "return-type": "json",
+      "max-length": 40,
+      // "interval": 1, // Remove this if your script is endless and write in loop
+      "on-click": "playerctl -p spotify previous",
+      "on-click-right" : "playerctl -p spotify next",
+      "on-scroll-up" : "playerctl -p spotify pause",
+      "on-scroll-down" : "playerctl -p spotify play",
+      "exec": "waybar-mediaplayer.py ", // Script in resources/custom_modules folder
+      "exec-on-event": true,
+      "exec-if": "pgrep spotify"
+  },
+  "custom/vpn": {
+      "format": "",
+      "exec": "echo '{\"class\": \"connected\"}'",
+      "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+      "return-type": "json",
+      "interval": 5
+  }
+}
+

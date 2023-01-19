@@ -194,7 +194,6 @@ bindsym Shift+Print	exec grimshot --notify save area
 # https://nixos.wiki/wiki/Sway
 exec dbus-sway-environment
 exec configure-gtk
-exec mako
 
 input "type:touchpad" {
     tap enabled
@@ -203,3 +202,8 @@ input "type:touchpad" {
    # pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
 }
 
+
+#
+# Screen capture
+#
+exec mako
