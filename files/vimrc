@@ -144,7 +144,7 @@ set textwidth=0 wrapmargin=0
 " https://vim.fandom.com/wiki/Accessing_the_system_clipboard
 set clipboard=unnamed
 
-colorscheme monokai
+" colorscheme monokai
 
 " NERDTree
 " ————————
