@@ -25,7 +25,6 @@ bind-key c new-window -c '#{pane_current_path}'
 
 # Status line
 set -g status-right-length "100"
-set-option -g status-right "[#(sh $HOME/.oar-time/oar_time.sh)] \"#h\" %H:%M %d-%m-%Y"
 
 # Use P to paste the content of the buffer
 bind P paste-buffer

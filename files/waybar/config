@@ -11,9 +11,6 @@
 	"modules-center": [
 		"custom/left-arrow-dark",
 		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-    "custom/spotify",
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
 		"clock#2",
