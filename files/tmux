@@ -33,14 +33,14 @@ bind P paste-buffer
 ## Moving around
 set-window-option -g mode-keys vi
 
-unbind h
-bind h select-pane -L
-unbind j
-bind j select-pane -D
-unbind k
-bind k select-pane -U
-unbind l
-bind l select-pane -R
+# unbind h
+# bind h select-pane -L
+# unbind j
+# bind j select-pane -D
+# unbind k
+# bind k select-pane -U
+# unbind l
+# bind l select-pane -R
 
 # fix ranger preview
 set-option -g default-terminal "screen-256color"
